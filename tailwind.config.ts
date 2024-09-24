@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { transferableAbortSignal } from "util";
 
 const config: Config = {
   content: [
@@ -13,6 +14,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        popup: 'popup 0.1s ease-out',
+        fadeOut: 'fadeOut 0.1s ease-in',
+      },
+      keyframes: {
+        popup: {
+          '0%': { transform: 'scale(0.5)', opacity: '0.5' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        fadeOut: {
+          '0%': { transform: 'scale(1)' , opacity: '1' },
+          '100%': { transform: 'scale(0)', opacity: '0' },
+        }
+      }
     },
   },
   plugins: [],
