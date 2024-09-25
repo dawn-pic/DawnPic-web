@@ -1,11 +1,17 @@
-'use client'
+"use client";
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Icon } from "@iconify/react"
 
 export default function ImageCard({ imageUuid, altInfo }) {
     const [copyButtonIconName, setCopyButtonIconName] = useState('tabler:copy')
-    const origin = window.location.origin;
+    const [origin, setOrigin] = useState('')
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setOrigin(window.location.origin);
+        }
+    }, [])
 
     const copyButtonHandleClick = async () => {
         await navigator.clipboard.writeText(origin + '/api/image' + imageUuid)

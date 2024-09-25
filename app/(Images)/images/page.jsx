@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import withAuth from '../../withAuth'
 import PaginationBar from './PaginationBar'
@@ -83,7 +83,7 @@ const Image = () => {
 
                 <div className='grid grid-cols-3'>
                     {images.map((image) => (
-                        <ImageCard 
+                        <ImageCard
                             key={image.imageUuid}
                             imageUuid={image.imageUuid}
                             altInfo={image.altInfo}

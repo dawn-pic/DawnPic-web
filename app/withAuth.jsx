@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const withAuth = (WrappedComponent) => {
@@ -18,7 +18,7 @@ const withAuth = (WrappedComponent) => {
             checkAuth();
         }, [router]);
 
-        return <WrappedComponent {...props} />;
+        return <Suspense fallback={<div></div>}><WrappedComponent {...props} /></Suspense>;
     }
 
     WithAuth.displayName = `WithAuth(${WrappedComponent.displayName || WrappedComponent.name || `Component`})`

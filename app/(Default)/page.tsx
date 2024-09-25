@@ -1,5 +1,4 @@
-'use client';
-
+"use client";
 import { useCallback, DragEvent, ChangeEvent, useEffect } from "react";
 import { useState, useRef } from "react";
 import { Icon } from '@iconify/react'
@@ -11,9 +10,16 @@ export default function Home() {
   const [imageDetails, setImageDetails] = useState<{name: string; size: string} | null>(null);
   const [imageUuid, setImageUuid] = useState<string>('')
   const [isCopyButtonActive, setIsCopyButtonActive] = useState<boolean>(false);
+  const [origin, setOrigin] = useState<string>('')
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setOrigin(window.location.origin);
+    }
+  }, [])
 
   const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -107,8 +113,6 @@ export default function Home() {
     dialogRef.current?.classList.add('animate-fadeOut');
     dialogRef.current?.classList.remove('animate-popup');
   }
-
-  const origin = window.location.origin;
 
   return (
     <>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -14,7 +14,13 @@ const inter = Inter({ subsets: ["latin"] });
 //   description: "A picture bed system based on Spring Boot",
 // };
 
-const checkIfUserLoggedIn = async () => {
+type UserStatus = {
+  loggedIn: boolean;
+  user?: { username: string };
+  message?: string;
+}
+
+const checkIfUserLoggedIn = async (): Promise<UserStatus> => {
   try {
     const response = await fetch('/api/user/current-user');
     if (response.ok) {
@@ -36,6 +42,11 @@ const checkIfUserLoggedIn = async () => {
       message: 'An unexpected error occurred'
     }
   }
+
+  return {
+    loggedIn: false,
+    message: 'Unknown error'
+  }
 }
 
 export default function RootLayout({
@@ -43,7 +54,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [userStatus, setUserStatus] = useState({ loggedIn: false, user: null });
+  const [userStatus, setUserStatus] = useState<UserStatus>({ loggedIn: false });
 
   useEffect(()=> {
     const fetchUserStatus = async () => {
@@ -61,7 +72,7 @@ export default function RootLayout({
           <nav className="flex gap-3 max-w-screen-lg mx-auto text-orange-600 font-extrabold text-2xl h-[--header-height]">
             {userStatus.loggedIn ? (
               <>
-                <p className="ml-auto p-1 text-orange-200">Welcome, {userStatus.user.username}</p>
+                <p className="ml-auto p-1 text-orange-200">Welcome, {userStatus.user?.username}</p>
                 <button className="flex mb-auto p-1 transition-all bg-orange-300 rounded-b hover:pt-2 shadow hover:shadow-lg"><Link href="/images">My images</Link></button>
               </>
             ) : (
