@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "release": "nuxt lint && changelogen --release --minor && git push --follow-tags",
+    "release:patch": "nuxt lint && changelogen --release --patch && git push --follow-tags",
+    "release:minor": "nuxt lint && changelogen --release --minor && git push --follow-tags",
+    "release:major": "nuxt lint && changelogen --release --major && git push --follow-tags"
   },
   "dependencies": {
     "@iconify/react": "^5.0.2",
