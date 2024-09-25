@@ -1,5 +1,17 @@
 # Changelog of Dawn Pic Web
 
+## v1.0.2
+
+[compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.0.1...v1.0.2)
+
+### 🩹 Fixes
+
+- Resolved images page rendering problem ([06b69cc](https://github.com/dawn-pic/DawnPic-web/commit/06b69cc))
+
+### ❤️ Contributors
+
+- Hanyujie2002 ([@hanyujie2002](http://github.com/hanyujie2002))
+
 ## v1.0.1
 
 
