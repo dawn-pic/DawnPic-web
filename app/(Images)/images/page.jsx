@@ -63,11 +63,12 @@ const Image = () => {
         const page = searchParams.get('page');
         if (page !== null) {
             setPageNumber(parseInt(page, 10));
+        } else {
+            setPageNumber(1)
         }
     }, [searchParams])
 
     useEffect(() => {
-
         fetchImages()
     }, [pageNumber])
 

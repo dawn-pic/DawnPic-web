@@ -36,26 +36,28 @@ export default function PaginationBar() {
     }
 
     return (
-        <> { pageCount > 1 &&
-            <ReactPaginate
-                initialPage={currentPage-1}
-                pageCount={pageCount}
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                marginPagesDisplayed={2}
-                renderOnZeroPageCount={null}
-                containerClassName='flex'
-                activeClassName='bg-orange-700 !hover:bg-orange-700'
-                activeLinkClassName='text-orange-100'
-                previousClassName='flex w-16 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500'
-                previousLinkClassName='flex text-orange-100 w-full h-full items-center justify-center'
-                nextClassName='flex w-16 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500 active:bg-orange-600'
-                nextLinkClassName='flex w-full h-full items-center justify-center text-orange-100'
-                disabledClassName='invisible'
-                disabledLinkClassName='cursor-default'
-                pageClassName='flex w-12 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-700'
-                pageLinkClassName='flex items-center justify-center w-full h-full text-orange-100'
-            />}
+        <>
+            <div className={pageCount>1?'':'invisible'}>
+                <ReactPaginate
+                    initialPage={currentPage - 1}
+                    pageCount={pageCount}
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={5}
+                    marginPagesDisplayed={2}
+                    renderOnZeroPageCount={null}
+                    containerClassName='flex'
+                    activeClassName='bg-orange-700 !hover:bg-orange-700'
+                    activeLinkClassName='text-orange-100'
+                    previousClassName='flex w-16 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500'
+                    previousLinkClassName='flex text-orange-100 w-full h-full items-center justify-center'
+                    nextClassName='flex w-16 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500 active:bg-orange-600'
+                    nextLinkClassName='flex w-full h-full items-center justify-center text-orange-100'
+                    disabledClassName='invisible'
+                    disabledLinkClassName='cursor-default'
+                    pageClassName='flex w-12 h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-700'
+                    pageLinkClassName='flex items-center justify-center w-full h-full text-orange-100'
+                />
+            </div>
         </>
     )
 }
