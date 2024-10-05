@@ -69,7 +69,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="w-full bg-orange-600">
-          <nav className="flex gap-3 max-w-screen-lg mx-auto text-orange-600 font-extrabold text-2xl h-[--header-height]">
+          <nav className="flex gap-3 mx-auto text-orange-600 font-extrabold text-2xl h-[--header-height]" style={{ maxWidth: "min(1024px, calc(100vw - 4rem))" }}>
             {userStatus.loggedIn ? (
               <>
                 <p className="ml-auto p-1 text-orange-200">Welcome, {userStatus.user?.username}</p>
@@ -83,15 +83,17 @@ export default function RootLayout({
             )}
           </nav>
 
-          <main className="flex min-h-[calc(100vh-var(--footer-height))]">
+          <main className="flex items-center justify-center min-h-[calc(100vh-var(--footer-height))]">
             {children}
           </main>
 
-          <footer className="flex flex-row bg-orange-200 font-extrabold items-center h-[--footer-height] text-orange-500">
-            <p className="ml-10">Copyright © 2024 Dawn Pic</p>
-            <a href="https://raw.githubusercontent.com/hanyujie2002/DawnPic/main/LICENSE" className="ml-3 hover:underline">MIT Licence</a>
-            <p className="ml-auto">Powered by</p>
-            <a href="https://nextjs.org/" className="hover:underline ml-1 mr-4">Nuxt.js</a>
+          <footer className="flex flex-col sm:flex-row bg-orange-200 font-extrabold items-center sm:h-[--footer-height] text-orange-500">
+            <p className="sm:ml-10">Copyright © 2024 Dawn Pic</p>
+            <a href="https://raw.githubusercontent.com/hanyujie2002/DawnPic/main/LICENSE" className="sm:ml-3 hover:underline">MIT Licence</a>
+            <div className="sm:ml-auto flex flex-row">
+              <p className="content-center">Powered by</p>
+              <a href="https://nextjs.org/" className="hover:underline ml-1 sm:mr-4">Nuxt.js</a>
+            </div>
           </footer>
         </div>
       </body>
