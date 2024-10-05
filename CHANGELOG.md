@@ -1,5 +1,17 @@
 # Changelog of Dawn Pic Web
 
+## v1.1.1
+
+[compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.1.0...v1.1.1)
+
+### 🩹 Fixes
+
+- Fixed two links error ([240f70e](https://github.com/dawn-pic/DawnPic-web/commit/240f70e))
+
+### ❤️ Contributors
+
+- Hanyujie2002 ([@hanyujie2002](http://github.com/hanyujie2002))
+
 ## v1.1.0
 
 [compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.0.2...v1.1.0)
