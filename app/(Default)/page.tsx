@@ -116,7 +116,7 @@ export default function Home() {
   }
 
     const copyButtonHandleClick = async (imageUuid: String) => {
-        await navigator.clipboard.writeText(origin + '/api/image' + imageUuid)
+        await navigator.clipboard.writeText(origin + '/api/image/' + imageUuid)
 
         setCopyButtonIconName('tabler:copy-check');
 

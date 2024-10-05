@@ -14,7 +14,7 @@ export default function ImageCard({ imageUuid, altInfo }) {
     }, [])
 
     const copyButtonHandleClick = async () => {
-        await navigator.clipboard.writeText(origin + '/api/image' + imageUuid)
+        await navigator.clipboard.writeText(origin + '/api/image/' + imageUuid)
 
         setCopyButtonIconName('tabler:copy-check');
 
