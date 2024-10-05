@@ -1,5 +1,17 @@
 # Changelog of Dawn Pic Web
 
+## v1.1.0
+
+[compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.0.2...v1.1.0)
+
+### 🚀 Enhancements
+
+- Implemented multiple images uploading ([cbb49bf](https://github.com/dawn-pic/DawnPic-web/commit/cbb49bf))
+
+### ❤️ Contributors
+
+- Hanyujie2002 ([@hanyujie2002](http://github.com/hanyujie2002))
+
 ## v1.0.2
 
 [compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.0.1...v1.0.2)
