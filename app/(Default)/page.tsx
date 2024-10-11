@@ -128,30 +128,33 @@ export default function Home() {
 
   return (
     <>
-      <div className="relative flex flex-col w-full h-[36rem] shadow-xl my-3" style={{ maxWidth: "min(64rem, calc(100vw - 4rem))" }}>
-        <div className="flex h-16 bg-orange-200 border-t-4 border-l-4 border-r-4 border-orange-200 rounded-t-lg items-center font-extrabold text-orange-600 text-2xl">
-          <span className="flex ml-4">Dawn Pic</span>
+      <div className="relative flex flex-col w-full h-[36rem] shadow-xl my-3" style={{ maxWidth: "min(64rem, calc(100vw - 1.5rem))" }}>
+        <div className="flex flex-col sm:flex-row sm:h-16 bg-orange-200 border-t-4 border-l-4 border-r-4 border-orange-200 rounded-t-lg items-center font-extrabold text-orange-600 text-2xl">
+          <span className="flex my-4 sm:ml-4">Dawn Pic</span>
 
-          {images.length ?
-            <div className="ml-auto mr-4 space-x-4">
-              <button
-                className="transition-all bg-green-400 text-green-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+            <div className="w-full flex flex-col mb-1 sm:flex-row space-y-1 sm:space-y-0 sm:ml-auto sm:mr-4 sm:space-x-4 sm:w-auto">
+              {images.length > 0 &&
+              <div className="flex sm:space-x-4"><button
+                className="w-1/2 mr-0.5 bg-green-400 text-green-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
                 onClick={handleUpload}>
                 Upload
               </button>
               <button
-                className="bg-red-400 text-red-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+                className="w-1/2 ml-0.5 bg-red-400 text-red-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
                 onClick={handleCancel}
               >
                 Cancel
+              </button></div>}
+              <button
+                className="bg-blue-400 text-blue-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+                onClick={handleClick}
+              >
+                Add
               </button>
             </div>
-            :
-            <></>
-          }
         </div>
         <div
-          className={`flex flex-grow transition-all border-b-4 border-l-4 border-r-4 border-dashed border-gray-300 rounded-b-lg text-center cursor-pointer hover:backdrop-brightness-90 active:backdrop-brightness-75 ${isDraggingOver ? 'backdrop-brightness-90' : ''}`}
+          className={`flex flex-grow overflow-y-auto transition-all border-b-4 border-l-4 border-r-4 border-dashed border-gray-300 rounded-b-lg text-center cursor-pointer hover:backdrop-brightness-90 active:backdrop-brightness-75 ${isDraggingOver ? 'backdrop-brightness-90' : ''}`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
@@ -159,7 +162,7 @@ export default function Home() {
         >
           {images.length ?
             (
-              <div className="grid grid-cols-4 grid-rows-2 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 w-full">
                 {images.map((image, index) => (
                   <div key={index} className="flex w-full h-full relative border border-dashed border-orange-200">
                     <img src={URL.createObjectURL(image)} className="flex rounded object-cover w-48 h-48 mx-auto my-auto brightness-50" />

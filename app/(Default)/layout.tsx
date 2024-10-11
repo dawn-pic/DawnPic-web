@@ -69,7 +69,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="w-full bg-orange-600">
-          <nav className="flex gap-3 mx-auto text-orange-600 font-extrabold text-2xl h-[--header-height]" style={{ maxWidth: "min(1024px, calc(100vw - 4rem))" }}>
+          <nav className="flex gap-3 mx-auto text-orange-600 font-extrabold text-2xl h-[--header-height]" style={{ maxWidth: "min(1024px, calc(100vw - 1.5rem))" }}>
             {userStatus.loggedIn ? (
               <>
                 <p className="ml-auto p-1 text-orange-200">Welcome, {userStatus.user?.username}</p>
