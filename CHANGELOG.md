@@ -1,5 +1,17 @@
 # Changelog of Dawn Pic Web
 
+## v1.2.0
+
+[compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.1.1...v1.2.0)
+
+### 🚀 Enhancements
+
+- Implemented Add Image button ([a30abd4](https://github.com/dawn-pic/DawnPic-web/commit/a30abd4))
+
+### ❤️ Contributors
+
+- Hanyujie2002 ([@hanyujie2002](http://github.com/hanyujie2002))
+
 ## v1.1.1
 
 [compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.1.0...v1.1.1)
