@@ -183,7 +183,7 @@ export default function Home() {
 
         <dialog
           ref={dialogRef}
-          className="relative bg-green-600 top-0 bottom-0 w-[48rem] h-[26rem] rounded shadow backdrop-brightness-50"
+          className="sm:relative fixed bg-green-600 top-0 bottom-0 w-[48rem] h-dvh max-w-full max-h-[100dvh] sm:h-[26rem] sm:rounded shadow backdrop-brightness-50"
         >
           {
             imageUuids.length === 1 ? (
@@ -220,10 +220,10 @@ export default function Home() {
                   </button>
                 </div>
 
-                <div className="flex flex-grow">
+                <div className="flex">
                   <div className="grid grid-rows-4 grid-cols-2 w-full h-full overflow-y-auto">
                     {imageUuids.map((imageUuid, index) => (
-                      <div className="relative group flex w-full h-full items-center border border-dashed" key={index}>
+                      <div className="relative group flex flex-col sm:flex-row w-full h-full items-center border border-dashed" key={index}>
                         <img className="ml-3 rounded object-cover h-20 w-20" src={`/api/image/${imageUuid}`} />
                         <div className="text-green-200 px-1 font-mono break-all">{origin + '/api/image/' + imageUuid}</div>
 
