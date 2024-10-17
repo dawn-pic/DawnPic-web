@@ -33,11 +33,11 @@ export default function ImageCard({ imageUuid, altInfo }) {
 
     return (
         <>
-            <div className='group relative mt-3'>
+            <div className='group flex relative sm:mt-3 my-2 sm:my-4 mx-0.5 sm:mx-0'>
                 <img
                     src={`/api/image/${imageUuid}`}
                     alt={altInfo || 'Image'}
-                    className='rounded shadow-md object-cover w-60 h-60 mx-auto'
+                    className='rounded relative shadow-md object-cover sm:w-60 sm:h-60 w-48 h-48 mx-auto'
                     loading='lazy'
                 />
                 <button onClick={copyButtonHandleClick}>

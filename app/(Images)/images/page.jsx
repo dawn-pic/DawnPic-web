@@ -75,14 +75,14 @@ const Image = () => {
     return (
         <>
             <div className='relative flex flex-col mx-auto pt-5 px-3 rounded-t w-full max-w-3xl bg-orange-200 border-b-8 border-orange-600'>
-                <div className='flex w-full'>
+                <div className='flex flex-col sm:flex-row w-full'>
                     <span className='my-auto text-3xl font-extrabold text-orange-600'>My images</span>
-                    <div className='ml-auto'>
+                    <div className='mr-auto sm:mr-0 sm:ml-auto'>
                         <PaginationBar />
                     </div>
                 </div>
 
-                <div className='grid grid-cols-3'>
+                <div className='grid grid-cols-2 sm:grid-cols-3'>
                     {images.map((image) => (
                         <ImageCard
                             key={image.imageUuid}
@@ -95,7 +95,7 @@ const Image = () => {
 
             <dialog
                 ref={deleteDialogRef}
-                className="w-[47rem] h-[26rem] top-0 bottom-0 bg-orange-300 rounded shadow-3xl backdrop-brightness-50"
+                className="max-w-[100vw] w-[47rem] h-[26rem] top-0 bottom-0 bg-orange-300 rounded shadow-3xl backdrop-brightness-50"
             >
                 <div className='flex flex-col w-full h-full'>
                     <div className='flex py-24 bg-orange-400 text-3xl font-extrabold text-orange-200 pl-2 rounded-t'>
@@ -103,11 +103,11 @@ const Image = () => {
                     </div>
 
                     <div className='flex flex-grow'>
-                        <button onClick={() => handleDeleteImageConfirmed(currentImageUuid)} className='flex px-12 py-4 my-auto mx-auto bg-orange-400 text-orange-200 rounded font-extrabold text-3xl shadow'>
+                        <button onClick={() => handleDeleteImageConfirmed(currentImageUuid)} className='flex px-12 py-4 my-auto mx-auto bg-orange-400 text-orange-200 rounded font-extrabold text-3xl shadow hover:brightness-95 active:brightness-90'>
                             <span>Yes</span>
                         </button>
 
-                        <button onClick={handleDeleteImageCanceled} className='flex px-8 py-4 my-auto mx-auto bg-green-400 text-green-200 rounded font-extrabold text-3xl shadow'>
+                        <button onClick={handleDeleteImageCanceled} className='flex px-8 py-4 my-auto mx-auto bg-green-400 text-green-200 rounded font-extrabold text-3xl shadow hover:brightness-95 active:brightness-90'>
                             <span>No</span>
                         </button>
                     </div>
