@@ -1,5 +1,17 @@
 # Changelog of Dawn Pic Web
 
+## v1.2.2
+
+[compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.2.1...v1.2.2)
+
+### 🚀 Enhancements
+
+- Enhanced responsibility ([b73ce4d](https://github.com/dawn-pic/DawnPic-web/commit/b73ce4d))
+
+### ❤️ Contributors
+
+- Hanyujie2002 ([@hanyujie2002](http://github.com/hanyujie2002))
+
 ## v1.2.1
 
 [compare changes](https://github.com/dawn-pic/DawnPic-web/compare/v1.2.0...v1.2.1)
