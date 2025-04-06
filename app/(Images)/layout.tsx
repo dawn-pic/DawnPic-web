@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="w-full bg-orange-600">
-          <nav className="bg-orange-200 flex gap-3 text-orange-600 font-extrabold border-b-8 border-orange-600 text-2xl h-[--header-height]">
+          <nav className="bg-orange-200 flex gap-3 text-orange-600 font-extrabold border-b-8 border-orange-600 text-2xl h-(--header-height)">
             <Link href="/"  className="ml-4 my-auto">
               <span>Dawn Pic</span>
             </Link>
@@ -27,7 +27,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="flex flex-row bg-orange-200 font-extrabold items-center h-[--footer-height] text-orange-500">
+          <footer className="flex flex-row bg-orange-200 font-extrabold items-center h-(--footer-height) text-orange-500">
             <p className="ml-10">Copyright © 2024 Dawn Pic</p>
             <a href="https://raw.githubusercontent.com/hanyujie2002/DawnPic/main/LICENSE" className="ml-3 hover:underline">MIT Licence</a>
             <p className="ml-auto">Powered by</p>

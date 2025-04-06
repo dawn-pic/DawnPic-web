@@ -135,18 +135,18 @@ export default function Home() {
             <div className="w-full flex flex-col mb-1 sm:flex-row space-y-1 sm:space-y-0 sm:ml-auto sm:mr-4 sm:space-x-4 sm:w-auto">
               {images.length > 0 &&
               <div className="flex sm:space-x-4"><button
-                className="w-1/2 mr-0.5 bg-green-400 text-green-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+                className="w-1/2 mr-0.5 bg-green-400 text-green-600 px-2 py-1 rounded-xs shadow-xs hover:brightness-95 active:brightness-90"
                 onClick={handleUpload}>
                 Upload
               </button>
               <button
-                className="w-1/2 ml-0.5 bg-red-400 text-red-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+                className="w-1/2 ml-0.5 bg-red-400 text-red-600 px-2 py-1 rounded-xs shadow-xs hover:brightness-95 active:brightness-90"
                 onClick={handleCancel}
               >
                 Cancel
               </button></div>}
               <button
-                className="bg-blue-400 text-blue-600 px-2 py-1 rounded-sm shadow-sm hover:brightness-95 active:brightness-90"
+                className="bg-blue-400 text-blue-600 px-2 py-1 rounded-xs shadow-xs hover:brightness-95 active:brightness-90"
                 onClick={handleClick}
               >
                 Add
@@ -154,7 +154,7 @@ export default function Home() {
             </div>
         </div>
         <div
-          className={`flex flex-grow overflow-y-auto transition-all border-b-4 border-l-4 border-r-4 border-dashed border-gray-300 rounded-b-lg text-center cursor-pointer hover:backdrop-brightness-90 active:backdrop-brightness-75 ${isDraggingOver ? 'backdrop-brightness-90' : ''}`}
+          className={`flex grow overflow-y-auto transition-all border-b-4 border-l-4 border-r-4 border-dashed border-gray-300 rounded-b-lg text-center cursor-pointer hover:backdrop-brightness-90 active:backdrop-brightness-75 ${isDraggingOver ? 'backdrop-brightness-90' : ''}`}
           onDrop={handleDrop}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
@@ -165,7 +165,7 @@ export default function Home() {
               <div className="grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2 w-full">
                 {images.map((image, index) => (
                   <div key={index} className="flex w-full h-full relative border border-dashed border-orange-200">
-                    <img src={URL.createObjectURL(image)} className="flex rounded object-cover w-48 h-48 mx-auto my-auto brightness-50" />
+                    <img src={URL.createObjectURL(image)} className="flex rounded-sm object-cover w-48 h-48 mx-auto my-auto brightness-50" />
                     <p className="absolute bottom-0 left-0 right-0 m-auto font-extrabold text-green-300">
                       { truncateMiddle(imageDetails[index]?.name || '', 20) }
                     </p>
@@ -183,7 +183,7 @@ export default function Home() {
 
         <dialog
           ref={dialogRef}
-          className="sm:relative fixed bg-green-600 top-0 bottom-0 w-[48rem] h-dvh max-w-full max-h-[100dvh] sm:h-[26rem] sm:rounded shadow backdrop-brightness-50"
+          className="sm:relative fixed bg-green-600 top-0 bottom-0 w-[48rem] h-dvh max-w-full max-h-[100dvh] sm:h-[26rem] sm:rounded-sm shadow-sm backdrop-brightness-50"
         >
           {
             imageUuids.length === 1 ? (
@@ -192,20 +192,20 @@ export default function Home() {
                 <span className="my-auto mx-4">Image Uploaded Successfully!</span>
               </div>
               <div className="flex justify-center flex-col">
-                <div className="rounded ring-1 ring-green-300 mx-2 text-green-300 text-xl ">
-                  <div className="w-full font-bold py-2 px-1 ring-1 ring-green-300 rounded">image link</div>
+                <div className="rounded-sm ring-1 ring-green-300 mx-2 text-green-300 text-xl ">
+                  <div className="w-full font-bold py-2 px-1 ring-1 ring-green-300 rounded-sm">image link</div>
                   <div className="text-green-200 px-1 font-mono">{origin + '/api/image/' + imageUuids[0]}</div>
                 </div>
                 <button
                   onClick={handleLinkCopy}
-                  className="transition-all rounded ring-1 ring-green-300 mx-2 py-3 my-2 text-green-300 font-extrabold text-xl hover:backdrop-brightness-95 active:backdrop-brightness-90">
+                  className="transition-all rounded-sm ring-1 ring-green-300 mx-2 py-3 my-2 text-green-300 font-extrabold text-xl hover:backdrop-brightness-95 active:backdrop-brightness-90">
                   {isCopyButtonActive ? "Link Copied ✔" : "Copy Link"}
                 </button>
               </div>
 
               <button
                 onClick={dialogClose}
-                className="transition-all absolute right-3 top-2 p-2 rounded hover:backdrop-brightness-95 active:backdrop-brightness-90">
+                className="transition-all absolute right-3 top-2 p-2 rounded-sm hover:backdrop-brightness-95 active:backdrop-brightness-90">
                 <Icon icon="icon-park-solid:error" className="text-green-400 text-3xl"></Icon>
               </button>
               </div>) : (
@@ -215,7 +215,7 @@ export default function Home() {
 
                   <button
                     onClick={dialogClose}
-                    className="flex transition-all ml-auto mr-2 rounded hover:backdrop-brightness-95 active:backdrop-brightness-90">
+                    className="flex transition-all ml-auto mr-2 rounded-sm hover:backdrop-brightness-95 active:backdrop-brightness-90">
                     <Icon icon="icon-park-solid:error" className="text-green-400 text-3xl"></Icon>
                   </button>
                 </div>
@@ -224,11 +224,11 @@ export default function Home() {
                   <div className="grid grid-rows-4 grid-cols-2 w-full h-full overflow-y-auto">
                     {imageUuids.map((imageUuid, index) => (
                       <div className="relative group flex flex-col sm:flex-row w-full h-full items-center border border-dashed" key={index}>
-                        <img className="ml-3 rounded object-cover h-20 w-20" src={`/api/image/${imageUuid}`} />
+                        <img className="ml-3 rounded-sm object-cover h-20 w-20" src={`/api/image/${imageUuid}`} />
                         <div className="text-green-200 px-1 font-mono break-all">{origin + '/api/image/' + imageUuid}</div>
 
                         <button onClick={ () => copyButtonHandleClick(imageUuid) }>
-                          <Icon icon={copyButtonIconName} className="transition-all absolute hidden w-10 h-10 text-green-400 bg-green-200/80 rounded bottom-1 right-2 group-hover:block hover:brightness-90 active:brightness-75" />
+                          <Icon icon={copyButtonIconName} className="transition-all absolute hidden w-10 h-10 text-green-400 bg-green-200/80 rounded-sm bottom-1 right-2 group-hover:block hover:brightness-90 active:brightness-75" />
                         </button>
                       </div>
                     ))}

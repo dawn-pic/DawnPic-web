@@ -37,15 +37,15 @@ export default function ImageCard({ imageUuid, altInfo }) {
                 <img
                     src={`/api/image/${imageUuid}`}
                     alt={altInfo || 'Image'}
-                    className='rounded relative shadow-md object-cover sm:w-60 sm:h-60 w-48 h-48 mx-auto'
+                    className='rounded-sm relative shadow-md object-cover sm:w-60 sm:h-60 w-48 h-48 mx-auto'
                     loading='lazy'
                 />
                 <button onClick={copyButtonHandleClick}>
-                    <Icon icon={copyButtonIconName} className="transition-all absolute hidden w-10 h-10 text-orange-400 bg-orange-200 rounded top-1 left-2 group-hover:block hover:brightness-90 active:brightness-75" />
+                    <Icon icon={copyButtonIconName} className="transition-all absolute hidden w-10 h-10 text-orange-400 bg-orange-200 rounded-sm top-1 left-2 group-hover:block hover:brightness-90 active:brightness-75" />
                 </button>
 
                 <button onClick={emitImageDeleteEvent}>
-                    <Icon icon='mdi:delete' className="transition-all absolute hidden w-10 h-10 text-orange-400 bg-orange-200 rounded top-1 left-14 group-hover:block hover:brightness-90 active:brightness-75" />
+                    <Icon icon='mdi:delete' className="transition-all absolute hidden w-10 h-10 text-orange-400 bg-orange-200 rounded-sm top-1 left-14 group-hover:block hover:brightness-90 active:brightness-75" />
                 </button>
             </div>
         </>

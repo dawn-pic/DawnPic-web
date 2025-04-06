@@ -95,19 +95,19 @@ const Image = () => {
 
             <dialog
                 ref={deleteDialogRef}
-                className="max-w-[100vw] w-[47rem] h-[26rem] top-0 bottom-0 bg-orange-300 rounded shadow-3xl backdrop-brightness-50"
+                className="max-w-[100vw] w-[47rem] h-[26rem] top-0 bottom-0 bg-orange-300 rounded-sm shadow-3xl backdrop-brightness-50"
             >
                 <div className='flex flex-col w-full h-full'>
                     <div className='flex py-24 bg-orange-400 text-3xl font-extrabold text-orange-200 pl-2 rounded-t'>
                         Are you sure to delete this image?
                     </div>
 
-                    <div className='flex flex-grow'>
-                        <button onClick={() => handleDeleteImageConfirmed(currentImageUuid)} className='flex px-12 py-4 my-auto mx-auto bg-orange-400 text-orange-200 rounded font-extrabold text-3xl shadow hover:brightness-95 active:brightness-90'>
+                    <div className='flex grow'>
+                        <button onClick={() => handleDeleteImageConfirmed(currentImageUuid)} className='flex px-12 py-4 my-auto mx-auto bg-orange-400 text-orange-200 rounded-sm font-extrabold text-3xl shadow-sm hover:brightness-95 active:brightness-90'>
                             <span>Yes</span>
                         </button>
 
-                        <button onClick={handleDeleteImageCanceled} className='flex px-8 py-4 my-auto mx-auto bg-green-400 text-green-200 rounded font-extrabold text-3xl shadow hover:brightness-95 active:brightness-90'>
+                        <button onClick={handleDeleteImageCanceled} className='flex px-8 py-4 my-auto mx-auto bg-green-400 text-green-200 rounded-sm font-extrabold text-3xl shadow-sm hover:brightness-95 active:brightness-90'>
                             <span>No</span>
                         </button>
                     </div>

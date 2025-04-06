@@ -46,16 +46,16 @@ export default function Signup() {
         <>
             <div className="flex w-full">
                 <div className="flex w-2/5 bg-orange-600"></div>
-                <div className="relative flex flex-grow bg-orange-200 rounded-b-3xl border-b border-orange-600">
+                <div className="relative flex grow bg-orange-200 rounded-b-3xl border-b border-orange-600">
                     <h1 className="absolute left-5 top-3 text-orange-600 font-extrabold text-3xl">Sign Up</h1>
 
-                    <div className="m-auto w-full max-w-lg bg-orange-600 shadow py-9 px-6 rounded">
+                    <div className="m-auto w-full max-w-lg bg-orange-600 shadow-sm py-9 px-6 rounded-sm">
                         <form onSubmit={handleSubmit}>
                             <label>
                                 <span className='block text-lg font-bold text-orange-200'>User name</span>
                                 <input
                                     required
-                                    className='mt-1 px-3 py-2 w-full bg-white shadow-sm rounded focus:outline-none focus:ring-4 focus:ring-orange-200'
+                                    className='mt-1 px-3 py-2 w-full bg-white shadow-xs rounded-sm focus:outline-hidden focus:ring-4 focus:ring-orange-200'
                                     placeholder='Input your user name'
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
@@ -65,7 +65,7 @@ export default function Signup() {
                                 <span className='block text-lg font-bold text-orange-200'>Password</span>
                                 <input
                                     required
-                                    className='mt-1 px-3 py-2 w-full bg-white shadow-sm rounded focus:outline-none focus:ring-4 focus:ring-orange-200'
+                                    className='mt-1 px-3 py-2 w-full bg-white shadow-xs rounded-sm focus:outline-hidden focus:ring-4 focus:ring-orange-200'
                                     placeholder='Input your password'
                                     type="password"
                                     value={password}
@@ -91,7 +91,7 @@ export default function Signup() {
 
                                 <input
                                     required
-                                    className='mt-1 px-3 py-2 w-full bg-white shadow-sm rounded focus:outline-none focus:ring-4 focus:ring-orange-200'
+                                    className='mt-1 px-3 py-2 w-full bg-white shadow-xs rounded-sm focus:outline-hidden focus:ring-4 focus:ring-orange-200'
                                     placeholder='Repeat your password'
                                     type="password"
                                     value={confirmPassword}
@@ -102,7 +102,7 @@ export default function Signup() {
 
                             <div className='mt-2'>
                                 <button
-                                    className='rounded bg-orange-200 w-full mt-4 py-1.5 text-orange-600 font-extrabold text-2xl hover:brightness-95 active:brightness-90'
+                                    className='rounded-sm bg-orange-200 w-full mt-4 py-1.5 text-orange-600 font-extrabold text-2xl hover:brightness-95 active:brightness-90'
                                     type="submit"
                                 >Sign Up
                                 </button>

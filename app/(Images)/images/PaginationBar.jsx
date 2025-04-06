@@ -48,13 +48,13 @@ export default function PaginationBar() {
                     containerClassName='flex'
                     activeClassName='bg-orange-700 !hover:bg-orange-700'
                     activeLinkClassName='text-orange-100'
-                    previousClassName='flex w-16 h-8 sm:w-16 sm:h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500'
+                    previousClassName='flex w-16 h-8 sm:w-16 sm:h-12 m-1 bg-orange-400 rounded-sm rounded-tr-xl hover:bg-orange-500'
                     previousLinkClassName='flex text-orange-100 w-full h-full items-center justify-center'
-                    nextClassName='flex w-12 h-8 sm:w-16 sm:h-12 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-500 active:bg-orange-600'
+                    nextClassName='flex w-12 h-8 sm:w-16 sm:h-12 m-1 bg-orange-400 rounded-sm rounded-tr-xl hover:bg-orange-500 active:bg-orange-600'
                     nextLinkClassName='flex w-full h-full items-center justify-center text-orange-100'
                     disabledClassName='invisible'
                     disabledLinkClassName='cursor-default'
-                    pageClassName='flex sm:w-12 sm:h-12 w-8 h-8 m-1 bg-orange-400 rounded rounded-tr-xl hover:bg-orange-700'
+                    pageClassName='flex sm:w-12 sm:h-12 w-8 h-8 m-1 bg-orange-400 rounded-sm rounded-tr-xl hover:bg-orange-700'
                     pageLinkClassName='flex items-center justify-center w-full h-full text-orange-100'
                 />
             </div>
